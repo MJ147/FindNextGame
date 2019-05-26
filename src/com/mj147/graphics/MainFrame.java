@@ -31,10 +31,11 @@ public class MainFrame extends JFrame{
         add(startPanel);
 
         gamePanel = new GamePanel();
+        mistakePanel = new MistakePanel();
 
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
-        mistakePanel = new MistakePanel();
     }
 
     public int getScore() {
