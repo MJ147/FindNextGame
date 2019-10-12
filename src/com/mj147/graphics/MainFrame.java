@@ -90,7 +90,8 @@ public class MainFrame extends JFrame{
         public StartPanel() {
 
             setLayout(new BorderLayout());
-            Color color = new Color(255,255,210);
+            Color color = new Color(0,255,210);
+            Color buttonColor = new Color(144, 255, 250);
             setBackground(color);
 
             gameNameLabel = new JLabel("FIND NEXT");
@@ -105,12 +106,12 @@ public class MainFrame extends JFrame{
             rulesPanel.setLayout(new BoxLayout(rulesPanel, BoxLayout.Y_AXIS));
             add(BorderLayout.CENTER, rulesPanel);
 
-            rule1Label = new JLabel("Can you find the next number in sequence?");
+            rule1Label = new JLabel("Can you find the next number in a sequence?");
             rule1Label.setAlignmentX(Component.CENTER_ALIGNMENT);
             rule1Label.setFont(new Font("Arial", Font.PLAIN, 14));
             rulesPanel.add(rule1Label);
 
-            rule2Label = new JLabel("Try to beat as many levels as you can without mistake.");
+            rule2Label = new JLabel("Try to beat as many levels as you can without any mistake.");
             rule2Label.setAlignmentX(Component.CENTER_ALIGNMENT);
             rule2Label.setFont(new Font("Arial", Font.PLAIN, 14));
             rulesPanel.add(rule2Label);
@@ -124,6 +125,7 @@ public class MainFrame extends JFrame{
 
             startButton = new Button(" START GAME ");
             startButton.addActionListener(this);
+            startButton.setBackground(buttonColor);
             startButton.setPreferredSize(new Dimension(200,100));
             startButton.setAlignmentX(Component.CENTER_ALIGNMENT);
             buttonPanel.add(startButton);
@@ -132,6 +134,7 @@ public class MainFrame extends JFrame{
 
             exitButton = new Button("  EXIT  GAME  ");
             exitButton.addActionListener(this);
+            exitButton.setBackground(buttonColor);
             exitButton.setPreferredSize(new Dimension(200,100));
             exitButton.setAlignmentX(Component.CENTER_ALIGNMENT);
             buttonPanel.add(exitButton);
@@ -171,7 +174,8 @@ public class MainFrame extends JFrame{
         public MistakePanel() {
 
             setLayout(new BorderLayout());
-            Color color = new Color(255,255,210);
+            Color color = new Color(0,255,210);
+            Color buttonColor = new Color(144, 255, 250);
             setBackground(color);
             gameNameLabel = new JLabel("WRONG ANSWER");
             gameNameLabel.setPreferredSize(new Dimension(600,180));
@@ -199,7 +203,7 @@ public class MainFrame extends JFrame{
             restartButton = new Button("    RESTART    ");
             restartButton.addActionListener(this);
             restartButton.setPreferredSize(new Dimension(200,100));
-            restartButton.setBackground(color);
+            restartButton.setBackground(buttonColor);
             restartButton.setAlignmentX(Component.CENTER_ALIGNMENT);
             buttonPanel.add(restartButton);
 
@@ -208,7 +212,7 @@ public class MainFrame extends JFrame{
             exitButton = new Button("  EXIT  GAME  ");
             exitButton.addActionListener(this);
             exitButton.setPreferredSize(new Dimension(150,50));
-            exitButton.setBackground(color);
+            exitButton.setBackground(buttonColor);
             exitButton.setAlignmentX(Component.CENTER_ALIGNMENT);
             buttonPanel.add(exitButton);
 

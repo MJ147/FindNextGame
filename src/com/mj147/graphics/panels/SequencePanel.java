@@ -12,7 +12,7 @@ public class SequencePanel extends JPanel {
     public SequencePanel(Sequence sequence) {
         this.sequence = sequence;
 
-        Color color = new Color(255,255,210);
+        Color color = new Color(255, 246, 141);
         setBackground(color);
 
     }

@@ -33,7 +33,7 @@ public class ButtonPanel extends JPanel implements ActionListener {
 
         score = mainFrame.getScore();
 
-        Color color = new Color(255,255,210);
+        Color color = new Color(255, 246, 141);
         setBackground(color);
         setBorder(new LineBorder(color, 60));
         setLayout(new GridLayout(2,2,30, 30));
@@ -61,7 +61,6 @@ public class ButtonPanel extends JPanel implements ActionListener {
 
         if (!isClick) {
             isClick = true;
-            buttonsTable[0].setBackground(Color.GREEN);
             if (!actionEvent.getSource().equals(buttonsTable[0])){
                 for (JButton button : buttonsTable) {
                     if (actionEvent.getSource().equals(button)) {
@@ -123,12 +122,6 @@ public class ButtonPanel extends JPanel implements ActionListener {
         buttonsTable[2].setText(String.valueOf(randomNumber()));
         buttonsTable[3].setText(String.valueOf(randomNumber()));
 
-        Color color = new Color(255,255,230);
-
-        buttonsTable[0].setBackground(color);
-        buttonsTable[1].setBackground(color);
-        buttonsTable[2].setBackground(color);
-        buttonsTable[3].setBackground(color);
         isClick = false;
 
     }

@@ -10,7 +10,7 @@ public class Button extends JButton {
         Font font = new Font("Arial", Font.PLAIN, 20);
 
         setText(name);
-        Color color = new Color(255,255,230);
+        Color color = new Color(255, 212, 107);
         setBackground(color);
         setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
         setFont(font);
