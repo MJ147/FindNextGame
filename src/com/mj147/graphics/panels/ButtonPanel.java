@@ -9,6 +9,8 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ButtonPanel extends JPanel implements ActionListener {
 
@@ -17,12 +19,12 @@ public class ButtonPanel extends JPanel implements ActionListener {
 
     private JButton[] buttonsTable = new JButton[4];
     private int lastElement;
-    private int counterOfRandomNumbers = 1;
     private boolean isClick = false;
     private Sequence sequence;
     private JPanel sequencePanel;
     private  MainFrame mainFrame;
-    private int score = 0;
+    private int score;
+    private Set<Integer> answers = new HashSet<>();
 
 
     public ButtonPanel(Sequence sequence, JPanel sequencePanel, MainFrame mainFrame) {
@@ -41,6 +43,7 @@ public class ButtonPanel extends JPanel implements ActionListener {
 
         sequence.makeSequence();
         lastElement = sequence.getLastElement();
+        answers.add(lastElement);
 
         buttonsTable[0] = new com.mj147.graphics.Button(String.valueOf(lastElement));
         buttonsTable[1] = new com.mj147.graphics.Button(String.valueOf(randomNumber()));
@@ -89,34 +92,20 @@ public class ButtonPanel extends JPanel implements ActionListener {
 
     private int randomNumber() {
 
-        int[] answers = new int[++counterOfRandomNumbers];
-        answers[0] = lastElement;
         int temp;
         do {
             temp = (int) (Math.random() * 50 + lastElement - 25);
-        } while (contains(answers,temp));
-        answers[counterOfRandomNumbers-1] = temp;
+        } while (answers.contains(temp));
+        answers.add(temp);
         return temp;
-    }
-
-    public boolean contains(int[] table, int value) {
-
-        boolean result = false;
-
-        for (int valueInTable : table) {
-            if (value == valueInTable) {
-                result = true;
-                break;
-            }
-        }
-
-        return result;
     }
 
     public void refreshButtons() {
 
         this.removeAll();
         addButtons();
+        answers.clear();
+        answers.add(lastElement);
         buttonsTable[0].setText(String.valueOf(lastElement));
         buttonsTable[1].setText(String.valueOf(randomNumber()));
         buttonsTable[2].setText(String.valueOf(randomNumber()));
@@ -129,7 +118,7 @@ public class ButtonPanel extends JPanel implements ActionListener {
     public void addButtons() {
 
         for (int i = 0; i < buttonsTable.length ; i++) {
-            int random = -1;
+            int random;
 
             do {
                 random = (int) (Math.random() * 4);
