@@ -21,7 +21,7 @@ Motivation to create this game was to crate a window application with simple alg
 
 ## Inspiration
 The application is completely created by me. The game idea is also mine. I wanted to learn Swing so I didn't use any GUI generator.
-I used a Stackover Flow and documentation. 
+I used the Stack Overflow and the Documentation. 
 
 ## Technologies
 * Java 8
